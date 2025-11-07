@@ -171,21 +171,162 @@ footer{padding:30px 0;text-align:center;color:var(--muted)}
 @keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
 @keyframes zoomIn{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}
 
-/* --- Responsiveness --- */
-@media (max-width: 1000px){
-  .hero-content{flex-direction:column;align-items:center;text-align:center}
-  .hero-right{width:300px}
-  .hero-image{width:300px;height:300px}
-  .about-content{flex-direction:column}
-  .contact-content{grid-template-columns:1fr}
-  nav{display:none} /* compact: hide nav on small screens - can be replaced with burger if wanted */
+/* --- RESPONSIVIDADE --- */
+
+/* ===== Tablets (até 1000px) ===== */
+@media (max-width: 1000px) {
+  .hero-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 32px;
+  }
+
+  .hero-left {
+    max-width: 100%;
+  }
+
+  .hero-right {
+    width: 280px;
+  }
+
+  .hero-image {
+    width: 280px;
+    height: 280px;
+  }
+
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 28px;
+  }
+
+  .skills-grid {
+    justify-content: center;
+    gap: 18px;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .nav-inner {
+    justify-content: space-between;
+    padding: 0 16px;
+  }
+
+  /* esconde menu padrão e deixa espaço para menu hamburguer */
+  nav {
+    display: none;
+  }
 }
 
-@media (max-width:480px){
-  h1{font-size:1.6rem}
-  .hero-image{width:240px;height:240px}
-  .hero-right{width:240px}
-  .skill-card{width:140px;height:150px}
-  .logo-name{display:none}
-  body{padding-top:72px}
+/* ===== Smartphones médios (até 768px) ===== */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .hero-image {
+    width: 240px;
+    height: 240px;
+  }
+
+  .hero-right {
+    width: 240px;
+  }
+
+  .skill-card {
+    width: 140px;
+    height: 160px;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .project-card {
+    min-height: 220px;
+  }
+
+  .about-image {
+    width: 260px;
+    height: 260px;
+  }
 }
+
+/* ===== Smartphones pequenos (até 480px) ===== */
+@media (max-width: 480px) {
+  body {
+    padding-top: 72px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .impact-phrase {
+    font-size: 0.9rem;
+  }
+
+  .hero-image {
+    width: 200px;
+    height: 200px;
+  }
+
+  .hero-right {
+    width: 200px;
+  }
+
+  .hero-ctas {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-ctas .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .skills-grid {
+    gap: 14px;
+  }
+
+  .skill-card {
+    width: 120px;
+    height: 140px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cert-list li {
+    font-size: 0.9rem;
+    padding: 12px;
+  }
+
+  .logo-name {
+    display: none;
+  }
+
+  footer {
+    padding: 20px 0;
+    font-size: 0.85rem;
+  }
+}
+
