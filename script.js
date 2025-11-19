@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --- Active nav link highlight ---
-  function highlightNav(){
+  function highlightNav() {
     let current = '';
     sections.forEach(section => {
       const top = section.getBoundingClientRect().top - navbar.offsetHeight - 30;
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const saved = localStorage.getItem(PROFILE_KEY);
   if (saved && heroImage) heroImage.src = saved;
 
-  function handleFile(e){
+  function handleFile(e) {
     const f = e.target.files && e.target.files[0];
     if (!f) return;
     if (!f.type.startsWith('image/')) return alert('Por favor, selecione uma imagem.');
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
     reader.onload = () => {
       const data = reader.result;
       if (heroImage) heroImage.src = data;
-      try { localStorage.setItem(PROFILE_KEY, data); } catch(_) {}
+      try { localStorage.setItem(PROFILE_KEY, data); } catch (_) { }
       // update small logo pill
       if (logoIS) logoIS.textContent = '';
       // create thumbnail letter fallback
@@ -126,12 +126,12 @@ document.addEventListener('DOMContentLoaded', () => {
   if (fileInput) fileInput.addEventListener('change', handleFile);
 
   // --- Parallax micro-interactions (mouse + scroll) ---
-  const heroCard = document.getElementById('heroCard');
+  const heroWrapper = document.querySelector('.hero-image-wrapper');
   window.addEventListener('mousemove', (ev) => {
-    if (!heroCard) return;
-    const x = (ev.clientX - window.innerWidth / 2) / 80;
-    const y = (ev.clientY - window.innerHeight / 2) / 160;
-    heroCard.style.transform = `translate(${x}px, ${y}px)`;
+    if (!heroWrapper) return;
+    const x = (ev.clientX - window.innerWidth / 2) / 50;
+    const y = (ev.clientY - window.innerHeight / 2) / 50;
+    heroWrapper.style.transform = `translate(${x}px, ${y}px)`;
   });
   // subtle scroll parallax for hero background transform
   window.addEventListener('scroll', () => {
@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const TEMPLATE_ID = 'TEMPLATE_ID';  // <--- substituir
   const USER_ID = 'USER_ID';          // <--- substituir (public key)
 
-  async function ensureEmailJs(){
+  async function ensureEmailJs() {
     if (window.emailjs) return;
     const s = document.createElement('script');
     s.src = 'https://cdn.emailjs.com/sdk/3.2.0/email.min.js';
@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
     await new Promise(res => s.onload = res);
   }
 
-  async function sendForm(e){
+  async function sendForm(e) {
     e.preventDefault();
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
@@ -181,8 +181,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // If placeholders still present, show instructions and stop
     if ([SERVICE_ID, TEMPLATE_ID, USER_ID].includes('SERVICE_ID') ||
-        [SERVICE_ID, TEMPLATE_ID, USER_ID].includes('TEMPLATE_ID') ||
-        [SERVICE_ID, TEMPLATE_ID, USER_ID].includes('USER_ID')) {
+      [SERVICE_ID, TEMPLATE_ID, USER_ID].includes('TEMPLATE_ID') ||
+      [SERVICE_ID, TEMPLATE_ID, USER_ID].includes('USER_ID')) {
       formStatus.innerHTML = '⚠️ Formulário não está configurado. Substitua SERVICE_ID / TEMPLATE_ID / USER_ID no <code>script.js</code> para envio real via EmailJS.';
       formStatus.style.color = 'orange';
       return;
@@ -210,12 +210,29 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // helper to get CSS var fallback
-  function varColor(name){ try { return getComputedStyle(document.documentElement).getPropertyValue(name); } catch { return null; } }
+  function varColor(name) { try { return getComputedStyle(document.documentElement).getPropertyValue(name); } catch { return null; } }
 
-  // --- Accessibility: close mobile nav by clicking links (if a mobile menu added) ---
-  navLinks.forEach(l => l.addEventListener('click', () => {
-    // If future mobile menu exists, close it here
-  }));
+  // --- Mobile Menu Toggle ---
+  const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+  const navList = document.querySelector('.nav-list');
+
+  if (mobileMenuBtn && navList) {
+    mobileMenuBtn.addEventListener('click', () => {
+      const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+      mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
+      navList.classList.toggle('active');
+      mobileMenuBtn.innerHTML = isExpanded ? '<i class="fas fa-bars"></i>' : '<i class="fas fa-times"></i>';
+    });
+
+    // Close menu when clicking a link
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navList.classList.remove('active');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+      });
+    });
+  }
 
   // --- Optional: lazy load heavy images (already using loading=lazy in markup) ---
 

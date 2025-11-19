@@ -3,11 +3,30 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Portfólio de Isabelle Santana, Desenvolvedora Web Full Stack Júnior. Especialista em HTML, CSS, JavaScript e React.">
+    <meta name="theme-color" content="#7E22CE">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://isatech07.github.io/">
+    <meta property="og:title" content="Isabelle Santana | Desenvolvedora Full Stack">
+    <meta property="og:description" content="Transformo ideias em soluções digitais modernas e eficientes.">
+    <meta property="og:image" content="isabelle_perfil1.jpeg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://isatech07.github.io/">
+    <meta property="twitter:title" content="Isabelle Santana | Desenvolvedora Full Stack">
+    <meta property="twitter:description" content="Transformo ideias em soluções digitais modernas e eficientes.">
+    <meta property="twitter:image" content="isabelle_perfil1.jpeg">
+
     <title>Isabelle Santana | Desenvolvedora Web Full Stack Júnior</title>
 
     <!-- Fonts & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
@@ -18,26 +37,34 @@
     <header class="navbar" id="navbar">
         <div class="container nav-inner">
             <div class="logo" id="logo">
-                <button class="logo-btn" id="logoBtn" title="Alterar foto de perfil">
+                <button class="logo-btn" id="logoBtn" aria-label="Alterar foto de perfil">
                     <span class="logo-is" id="logoIS">IS</span>
                 </button>
-                <span class="logo-name">Isabelle Santana</span>
+                <a href="#home" class="logo-name">Isabelle Santana</a>
             </div>
 
-            <nav aria-label="Main Navigation" id="mainNav">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#sobre" class="nav-link">Sobre</a>
-                <a href="#habilidades" class="nav-link">Habilidades</a>
-                <a href="#projetos" class="nav-link">Projetos</a>
-                <a href="#certificacoes" class="nav-link">Certificações</a>
-                <a href="#contato" class="nav-link">Contato</a>
+            <nav aria-label="Navegação Principal" id="mainNav">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                    <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
+                    <li><a href="#projetos" class="nav-link">Projetos</a></li>
+                    <li><a href="#certificacoes" class="nav-link">Certificações</a></li>
+                    <li><a href="#contato" class="nav-link">Contato</a></li>
+                </ul>
             </nav>
 
             <div class="nav-actions">
-                <a id="cvDownload" class="btn btn-outline" href="Isabelle_Santana_CV.pdf" download>Baixar CV</a>
-                <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">
+                <a id="cvDownload" class="btn btn-outline" href="Meu Currículo - Tânia Isabelle_20251117_220304_0000 (1).pdf" download aria-label="Baixar Currículo em PDF">
+                    <i class="fas fa-download"></i> <span>CV</span>
+                </a>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema claro/escuro">
                     <span class="moon"><i class="fas fa-moon"></i></span>
                     <span class="sun"><i class="fas fa-sun"></i></span>
+                </button>
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" aria-label="Menu Mobile" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
                 </button>
             </div>
         </div>
@@ -49,33 +76,40 @@
         <section id="home" class="hero section">
             <div class="container hero-content">
                 <div class="hero-left">
-                    <p class="subtitle fade-in-up delay-1">Olá, eu sou Isabelle</p>
-                    <h1 class="fade-in-up delay-2">Desenvolvedora Web<br>Full Stack Júnior</h1>
-                    <p class="impact-phrase fade-in-up delay-3">Transformo ideias em soluções digitais modernas e eficientes, focadas em UX, performance e código limpo.</p>
+                    <span class="subtitle fade-in-up delay-1">Olá, eu sou Isabelle 👋</span>
+                    <h1 class="fade-in-up delay-2">Desenvolvedora Web<br><span class="highlight">Full Stack Júnior</span></h1>
+                    <p class="impact-phrase fade-in-up delay-3">
+                        Crio experiências digitais que unem design elegante e código eficiente. Focada em performance, acessibilidade e inovação.
+                    </p>
 
                     <div class="hero-ctas fade-in-up delay-4">
                         <a href="#projetos" class="btn primary-btn">Ver Projetos <i class="fas fa-arrow-right"></i></a>
-                        <a href="#contato" class="btn btn-outline">Entrar em contato</a>
+                        <a href="#contato" class="btn btn-outline">Fale Comigo</a>
                     </div>
 
                     <div class="hero-socials fade-in-up delay-4">
-                        <a href="https://github.com/isatech07" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://linkedin.com/in/seuperfil" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="mailto:isabellesilvasantana207@gmail.com" aria-label="E-mail"><i class="fas fa-envelope"></i></a>
+                        <a href="https://github.com/isatech07" target="_blank" rel="noopener" aria-label="GitHub de Isabelle"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/in/seuperfil" target="_blank" rel="noopener" aria-label="LinkedIn de Isabelle"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:isabellesilvasantana207@gmail.com" aria-label="Enviar e-mail para Isabelle"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
 
                 <div class="hero-right zoom-in delay-5" id="heroCard">
-                    <!-- Circular profile with upload preview -->
-                    <div class="hero-image" id="heroImageWrap" title="Clique para alterar foto">
-                        <img id="heroImage" src="isabelle_perfil1.jpeg" alt="Foto de perfil de Isabelle Santana" loading="lazy">
-                        <div class="hero-image-overlay">
-                            <button id="uploadBtn" class="upload-btn" aria-label="Selecionar imagem">
-                                <i class="fas fa-camera"></i>
-                            </button>
+                    <div class="hero-image-wrapper">
+                        <div class="hero-image" id="heroImageWrap" title="Clique para alterar foto">
+                            <img id="heroImage" src="isabelle_perfil.jpeg" alt="Foto de perfil de Isabelle Santana" loading="eager">
+                            <div class="hero-image-overlay">
+                                <button id="uploadBtn" class="upload-btn" aria-label="Alterar foto de perfil">
+                                    <i class="fas fa-camera"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="hero-badge floating-badge">
+                            <i class="fas fa-code"></i>
+                            <span>Dev Full Stack</span>
                         </div>
                     </div>
-                    <a href="#sobre" class="scroll-down" aria-label="Descer"><i class="fas fa-chevron-down"></i></a>
+                    <a href="#sobre" class="scroll-down" aria-label="Rolar para baixo"><i class="fas fa-chevron-down"></i></a>
                 </div>
             </div>
 
@@ -87,12 +121,34 @@
         <section id="sobre" class="section dark-bg">
             <div class="container about-content">
                 <div class="about-text scroll-reveal left">
-                    <h2>Sobre mim</h2>
-                    <p>Sou formada em TI pelo IFSP Caraguatatuba e apaixonada por desenvolvimento web. Minha base é sólida em HTML, CSS e JavaScript, e busco aprimorar continuamente minhas habilidades em frameworks front-end e back-end — sempre com foco em entregar valor e código limpo.</p>
-                    <p>Mais do que codificar, adoro resolver problemas reais e projetar interfaces intuitivas que facilitem a vida dos usuários. Estou em busca de oportunidades para crescer como Desenvolvedora Full-Stack.</p>
+                    <div class="section-header">
+                        <span class="section-tag">Quem sou</span>
+                        <h2>Sobre Mim</h2>
+                    </div>
+                    <p>
+                        Formada em <strong>TI pelo IFSP Caraguatatuba</strong>, sou apaixonada por transformar linhas de código em soluções reais. 
+                        Minha jornada começou com a curiosidade de entender como a web funcionava e hoje construo aplicações completas.
+                    </p>
+                    <p>
+                        Tenho uma base sólida em <strong>HTML, CSS e JavaScript</strong>, e estou sempre explorando novas tecnologias como React e Node.js.
+                        Meu objetivo é criar interfaces que não sejam apenas bonitas, mas também intuitivas e acessíveis para todos os usuários.
+                    </p>
+                    
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">1+</span>
+                            <span class="stat-label">Ano de Estudo</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Projetos</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="about-image scroll-reveal right">
-                    <img id="aboutImage" src="isabelle_perfil2.jpeg" alt="Foto de perfil de Isabelle Santana" loading="lazy">
+                    <div class="image-frame">
+                        <img id="aboutImage" src="isabelle_perfil-2.jpeg" alt="Isabelle Santana trabalhando" loading="lazy">
+                    </div>
                 </div>
             </div>
         </section>
@@ -100,43 +156,44 @@
         <!-- SKILLS -->
         <section id="habilidades" class="section">
             <div class="container">
-                <h2>Habilidades</h2>
+                <div class="section-header center">
+                    <span class="section-tag">Tech Stack</span>
+                    <h2>Minhas Habilidades</h2>
+                </div>
+                
                 <div class="skills-grid">
+                    <!-- Frontend -->
                     <div class="skill-card scroll-reveal zoom" data-progress="90">
-                        <i class="fab fa-html5"></i>
-                        <span>HTML5</span>
-                        <div class="skill-progress"><div class="progress-bar"></div></div>
-                        <p class="skill-tooltip">Estrutura e Semântica.</p>
+                        <div class="skill-icon html"><i class="fab fa-html5"></i></div>
+                        <h3>HTML5</h3>
+                        <p>Semântica & SEO</p>
                     </div>
                     <div class="skill-card scroll-reveal zoom delay-1" data-progress="85">
-                        <i class="fab fa-css3-alt"></i>
-                        <span>CSS3</span>
-                        <div class="skill-progress"><div class="progress-bar"></div></div>
-                        <p class="skill-tooltip">Animações e Responsividade.</p>
+                        <div class="skill-icon css"><i class="fab fa-css3-alt"></i></div>
+                        <h3>CSS3</h3>
+                        <p>Flexbox, Grid & Animations</p>
                     </div>
                     <div class="skill-card scroll-reveal zoom delay-2" data-progress="82">
-                        <i class="fab fa-js"></i>
-                        <span>JavaScript</span>
-                        <div class="skill-progress"><div class="progress-bar"></div></div>
-                        <p class="skill-tooltip">Lógica, Fetch e DOM.</p>
+                        <div class="skill-icon js"><i class="fab fa-js"></i></div>
+                        <h3>JavaScript</h3>
+                        <p>ES6+, DOM & Fetch API</p>
                     </div>
                     <div class="skill-card scroll-reveal zoom delay-3" data-progress="75">
-                        <i class="fab fa-react"></i>
-                        <span>React</span>
-                        <div class="skill-progress"><div class="progress-bar"></div></div>
-                        <p class="skill-tooltip">Componentização e Hooks.</p>
+                        <div class="skill-icon react"><i class="fab fa-react"></i></div>
+                        <h3>React</h3>
+                        <p>Hooks, Components & State</p>
                     </div>
+                    
+                    <!-- Backend & Tools -->
                     <div class="skill-card scroll-reveal zoom delay-4" data-progress="70">
-                        <i class="fab fa-node-js"></i>
-                        <span>Node.js</span>
-                        <div class="skill-progress"><div class="progress-bar"></div></div>
-                        <p class="skill-tooltip">APIs REST e Express.</p>
+                        <div class="skill-icon node"><i class="fab fa-node-js"></i></div>
+                        <h3>Node.js</h3>
+                        <p>Express & API REST</p>
                     </div>
                     <div class="skill-card scroll-reveal zoom delay-5" data-progress="78">
-                        <i class="fas fa-code-branch"></i>
-                        <span>Git/GitHub</span>
-                        <div class="skill-progress"><div class="progress-bar"></div></div>
-                        <p class="skill-tooltip">Fluxos e PRs.</p>
+                        <div class="skill-icon git"><i class="fas fa-code-branch"></i></div>
+                        <h3>Git/GitHub</h3>
+                        <p>Versionamento & Colaboração</p>
                     </div>
                 </div>
             </div>
@@ -145,72 +202,92 @@
         <!-- PROJECTS -->
         <section id="projetos" class="section dark-bg">
             <div class="container">
-                <h2>Projetos</h2>
+                <div class="section-header center">
+                    <span class="section-tag">Portfólio</span>
+                    <h2>Projetos Recentes</h2>
+                </div>
+
                 <div class="projects-grid">
-                    <!-- Flip card -->
-                    <div class="project-card flip-container scroll-reveal left">
-                        <div class="flipper">
-                            <div class="front">
-                                <h3>01. Rota dos Sonhos 🌍</h3>
-                                <p>Site de intercâmbio com foco em oportunidades, destinos e experiências transformadoras.</p>
-                                <span class="action-hint">Passe o mouse / toque para detalhes</span>
-                            </div>
-                            <div class="back">
-                                <p>
-                                    Desenvolvido em HTML, CSS e JavaScript, o projeto apresenta uma interface moderna e responsiva, 
-                                    com seções informativas sobre programas de intercâmbio, depoimentos e contato. 
-                                    Criado para inspirar e conectar pessoas aos seus destinos dos sonhos.
-                                </p>
-                                <a href="https://isatech07.github.io/Rota-dos-Sonhos/" class="project-link" target="_blank" rel="noopener">
-                                    Ver Projeto <i class="fas fa-external-link-alt"></i>
-                                </a>
+                    <!-- Project 1 -->
+                    <article class="project-card scroll-reveal up">
+                        <div class="project-image">
+                            <div class="project-thumb gradient-1">
+                                <i class="fas fa-plane-departure"></i>
                             </div>
                         </div>
-                    </div>
-
-
-
-                    <!-- Simple cards -->
-                    <div class="project-card simple-card scroll-reveal bottom delay-1">
-                        <h3>02. Pé na Moda 👠</h3>
-                        <p>Loja virtual desenvolvida para simular uma experiência de e-commerce moderna e funcional.</p>
-                        <a href="https://github.com/isatech07/Pe-na-Moda/tree/main/Loja" class="project-link" target="_blank" rel="noopener">
-                            Ver Código <i class="fas fa-code"></i>
-                        </a>
-                    </div>
-
-                    <div class="project-card simple-card scroll-reveal right delay-2">
-                        <h3>03. EchoMusic 🎧</h3>
-                        <p>Protótipo de aplicativo musical com foco em interação, design moderno e experiência do usuário.</p>
-                        <a href="https://www.figma.com/proto/yDyFyc2Yv1siaYUm53MBbi/EchoMusic?node-id=308-388&t=AqYpGE2zFG0LGX2y-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1" 
-                        class="project-link" target="_blank" rel="noopener">
-                            Ver Design <i class="fas fa-paint-brush"></i>
-                        </a>
-                    </div>
-                    
-                    <div class="project-card flip-container scroll-reveal left">
-                        <div class="flipper">
-                            <div class="front">
-                                <h3>04. Verde Factual 🌿</h3>
-                                <p>Site informativo sobre sustentabilidade e conscientização ambiental.</p>
-                                <span class="action-hint">Passe o mouse / toque para detalhes</span>
+                        <div class="project-content">
+                            <h3>Rota dos Sonhos 🌍</h3>
+                            <p>Plataforma de intercâmbio conectando estudantes a oportunidades globais.</p>
+                            <div class="project-tags">
+                                <span>HTML</span><span>CSS</span><span>JS</span>
                             </div>
-                            <div class="back">
-                                <p>
-                                    Desenvolvido em HTML, CSS e JavaScript, o projeto destaca práticas ecológicas, 
-                                    notícias e curiosidades sobre o meio ambiente. 
-                                    Seu objetivo é inspirar atitudes sustentáveis e promover um futuro mais verde e consciente.
-                                </p>
-                                <a href="https://isatech07.github.io/Verde-Factual/" class="project-link" target="_blank" rel="noopener">
-                                    Ver Projeto <i class="fas fa-external-link-alt"></i>
-                                </a>
+                            <div class="project-links">
+                                <a href="https://isatech07.github.io/Rota-dos-Sonhos/" target="_blank" rel="noopener" class="btn-sm">Demo <i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="btn-sm outline">Code <i class="fab fa-github"></i></a>
                             </div>
                         </div>
-                    </div>
+                    </article>
 
+                    <!-- Project 2 -->
+                    <article class="project-card scroll-reveal up delay-1">
+                        <div class="project-image">
+                            <div class="project-thumb gradient-2">
+                                <i class="fas fa-shoe-prints"></i>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Pé na Moda 👠</h3>
+                            <p>E-commerce moderno com carrinho de compras e catálogo dinâmico.</p>
+                            <div class="project-tags">
+                                <span>Frontend</span><span>UI/UX</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/isatech07/Pe-na-Moda/tree/main/Loja" target="_blank" rel="noopener" class="btn-sm">Code <i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </article>
 
-                <div class="text-center" style="margin-top: 40px;">
-                    <a href="https://github.com/isatech07" class="btn primary-btn btn-outline">Ver mais no GitHub</a>
+                    <!-- Project 3 -->
+                    <article class="project-card scroll-reveal up delay-2">
+                        <div class="project-image">
+                            <div class="project-thumb gradient-3">
+                                <i class="fas fa-headphones"></i>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>EchoMusic 🎧</h3>
+                            <p>Protótipo de alta fidelidade para um player de música streaming.</p>
+                            <div class="project-tags">
+                                <span>Figma</span><span>Prototipagem</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://www.figma.com/proto/yDyFyc2Yv1siaYUm53MBbi/EchoMusic" target="_blank" rel="noopener" class="btn-sm">Design <i class="fas fa-paint-brush"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 4 -->
+                    <article class="project-card scroll-reveal up delay-3">
+                        <div class="project-image">
+                            <div class="project-thumb gradient-4">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Verde Factual 🌿</h3>
+                            <p>Portal de notícias focado em sustentabilidade e meio ambiente.</p>
+                            <div class="project-tags">
+                                <span>HTML</span><span>CSS</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://isatech07.github.io/Verde-Factual/" target="_blank" rel="noopener" class="btn-sm">Demo <i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="text-center mt-5">
+                    <a href="https://github.com/isatech07" class="btn btn-outline" target="_blank" rel="noopener">Ver todos no GitHub <i class="fab fa-github"></i></a>
                 </div>
             </div>
         </section>
@@ -218,41 +295,77 @@
         <!-- CERTIFICATIONS -->
         <section id="certificacoes" class="section">
             <div class="container">
-                <h2>Certificações</h2>
-                <ul class="cert-list">
-                    <li class="scroll-reveal left"><i class="fas fa-award"></i> Técnica em Informática para Internet - IFSP Caraguatatuba (2024)</li>
-                    <li class="scroll-reveal right delay-1"><i class="fas fa-award"></i> Curso: JavaScript Completo (ES6+) - Udemy (80h)</li>
-                    <li class="scroll-reveal left delay-2"><i class="fas fa-award"></i> Workshop: Boas Práticas de UX/UI - Alura (40h)</li>
-                    <li class="scroll-reveal right delay-3"><i class="fas fa-award"></i> Certificação em Responsividade e Mobile First - Rocketseat</li>
-                </ul>
+                <div class="section-header center">
+                    <span class="section-tag">Aprendizado</span>
+                    <h2>Certificações</h2>
+                </div>
+                <div class="cert-grid">
+                    <div class="cert-item scroll-reveal left">
+                        <div class="cert-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <div class="cert-info">
+                            <h4>Técnica em Informática para Internet</h4>
+                            <p>IFSP Caraguatatuba (2024)</p>
+                        </div>
+                    </div>
+                    <div class="cert-item scroll-reveal right delay-3">
+                        <div class="cert-icon"><i class="fas fa-mobile-alt"></i></div>
+                        <div class="cert-info">
+                            <h4>HACKATHON 2025</h4>
+                            <p>Rocketseat</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- CONTACT -->
         <section id="contato" class="section dark-bg">
             <div class="container contact-content">
-                <div class="contact-form scroll-reveal left">
-                    <h2>Entre em Contato</h2>
+                <div class="contact-form-wrapper scroll-reveal left">
+                    <div class="section-header">
+                        <span class="section-tag">Contato</span>
+                        <h2>Vamos Conversar?</h2>
+                        <p>Tem um projeto em mente ou quer apenas dar um oi? Preencha o formulário abaixo.</p>
+                    </div>
                     <form id="contact-form" autocomplete="off" novalidate>
-                        <input type="text" id="name" name="from_name" placeholder="Seu Nome" required>
-                        <input type="email" id="email" name="reply_to" placeholder="Seu E-mail" required>
-                        <input type="text" id="subject" name="subject" placeholder="Assunto" required>
-                        <textarea id="message" name="message" placeholder="Sua Mensagem" rows="5" required></textarea>
+                        <div class="input-group">
+                            <input type="text" id="name" name="from_name" placeholder=" " required>
+                            <label for="name">Seu Nome</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" id="email" name="reply_to" placeholder=" " required>
+                            <label for="email">Seu E-mail</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" id="subject" name="subject" placeholder=" " required>
+                            <label for="subject">Assunto</label>
+                        </div>
+                        <div class="input-group">
+                            <textarea id="message" name="message" placeholder=" " rows="5" required></textarea>
+                            <label for="message">Sua Mensagem</label>
+                        </div>
                         <div class="form-actions">
-                            <button type="submit" class="btn primary-btn">Enviar Mensagem</button>
-                            <button type="button" id="resetForm" class="btn btn-outline">Limpar</button>
+                            <button type="submit" class="btn primary-btn">Enviar Mensagem <i class="fas fa-paper-plane"></i></button>
                         </div>
                     </form>
                     <p id="form-status" aria-live="polite"></p>
                 </div>
 
                 <div class="contact-info scroll-reveal right">
-                    <h3>Redes e Links</h3>
-                    <p>Me encontre nestes canais:</p>
-                    <div class="social-links">
-                        <a href="https://linkedin.com/in/seuperfil" target="_blank" class="social-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                        <a href="https://github.com/isatech07" target="_blank" class="social-link"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="mailto:isabellesilvasantana207@gmail.com" class="social-link"><i class="fas fa-envelope"></i> Enviar E-mail</a>
+                    <div class="info-card">
+                        <h3>Canais de Contato</h3>
+                        <p>Sinta-se à vontade para me chamar nas redes sociais.</p>
+                        <div class="social-links-large">
+                            <a href="https://linkedin.com/in/seuperfil" target="_blank" class="social-btn linkedin">
+                                <i class="fab fa-linkedin"></i> <span>LinkedIn</span>
+                            </a>
+                            <a href="https://github.com/isatech07" target="_blank" class="social-btn github">
+                                <i class="fab fa-github"></i> <span>GitHub</span>
+                            </a>
+                            <a href="mailto:isabellesilvasantana207@gmail.com" class="social-btn email">
+                                <i class="fas fa-envelope"></i> <span>E-mail</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -261,13 +374,22 @@
 
     <!-- FOOTER -->
     <footer>
-        <div class="container">
-            <p>&copy; <span id="currentYear"></span> Isabelle Santana. Desenvolvido com paixão e código.</p>
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <span>IS</span>
+            </div>
+            <p>&copy; <span id="currentYear"></span> Isabelle Santana. Feito com <i class="fas fa-heart"></i> e código.</p>
+            <div class="footer-socials">
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
         </div>
     </footer>
 
     <!-- BACK TO TOP -->
-    <button id="back-to-top" class="back-to-top" aria-label="Voltar ao topo"><i class="fas fa-arrow-up"></i></button>
+    <button id="back-to-top" class="back-to-top" aria-label="Voltar ao topo">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <!-- SCRIPT -->
     <script src="script.js" defer></script>
